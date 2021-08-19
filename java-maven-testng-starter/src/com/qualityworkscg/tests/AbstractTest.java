@@ -17,6 +17,7 @@ public abstract class  AbstractTest {
   public void setup(String url) {
     // Set the path to the geckodriver
     System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
+    options.addArguments("--headless");
     
     // Instantiate a new Page and navigate 
     // to the url specified in the testng.xml

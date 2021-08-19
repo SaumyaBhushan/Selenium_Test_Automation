@@ -2,6 +2,7 @@ package com.qualityworkscg.tests;
 
 
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -18,7 +19,7 @@ public abstract class  AbstractTest {
     // Set the path to the geckodriver
     System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
     FirefoxOptions options = new FirefoxOptions();
-            options.setHeadless(true);
+          
             options.addArguments("--headless");
             options.addArguments("--window-size=1580,1280");
             options.addArguments("--no-sandbox");

@@ -1,7 +1,6 @@
 package com.qualityworkscg.tests;
 
 
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -17,11 +16,11 @@ public abstract class  AbstractTest {
   @Parameters({"url"})
   public void setup(String url) {
     // Set the path to the geckodriver
-    System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+    System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
     
     // Instantiate a new Page and navigate 
     // to the url specified in the testng.xml
-    page = new Page(new ChromeDriver());
+    page = new Page(new FirefoxDriver());
     page.navigate(url);
   }
 

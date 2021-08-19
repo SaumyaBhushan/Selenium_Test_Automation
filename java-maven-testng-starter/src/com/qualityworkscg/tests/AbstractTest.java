@@ -17,11 +17,18 @@ public abstract class  AbstractTest {
   public void setup(String url) {
     // Set the path to the geckodriver
     System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
-    options.addArguments("--headless");
+    FirefoxOptions options = new FirefoxOptions();
+            options.setHeadless(true);
+            options.addArguments("--headless");
+            options.addArguments("--window-size=1580,1280");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+
+            FirefoxDriver driver = new FirefoxDriver(options);
     
     // Instantiate a new Page and navigate 
     // to the url specified in the testng.xml
-    page = new Page(new FirefoxDriver());
+    page = new Page(driver);
     page.navigate(url);
   }
 

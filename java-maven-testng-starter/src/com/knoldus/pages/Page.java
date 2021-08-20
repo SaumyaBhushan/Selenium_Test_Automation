@@ -1,4 +1,4 @@
-package com.qualityworkscg.pages;
+package com.knoldus.pages;
 
 import org.openqa.selenium.WebDriver;
 

@@ -1,4 +1,4 @@
-package com.qualityworkscg.tests;
+package com.knoldus.tests;
 
 
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,18 +7,19 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import com.qualityworkscg.pages.Page;
+import com.knoldus.pages.Page;
 
 public abstract class  AbstractTest {
-  
+
   protected static Page page;
-  
+
   @BeforeTest
   @Parameters({"url"})
   public void setup(String url) {
     // Set the path to the geckodriver
     System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
     FirefoxOptions options = new FirefoxOptions();
+<<<<<<< Updated upstream:java-maven-testng-starter/src/com/qualityworkscg/tests/AbstractTest.java
           
             options.addArguments("--headless");
             options.addArguments("--window-size=1580,1280");
@@ -28,6 +29,16 @@ public abstract class  AbstractTest {
             FirefoxDriver driver = new FirefoxDriver(options);
     
     // Instantiate a new Page and navigate 
+=======
+    options.addArguments("--headless");
+    options.addArguments("--window-size=1580,1280");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+
+    FirefoxDriver driver = new FirefoxDriver(options);
+
+    // Instantiate a new Page and navigate
+>>>>>>> Stashed changes:java-maven-testng-starter/src/com/knoldus/tests/AbstractTest.java
     // to the url specified in the testng.xml
     page = new Page(driver);
     page.navigate(url);

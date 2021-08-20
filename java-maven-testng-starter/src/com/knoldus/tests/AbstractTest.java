@@ -27,15 +27,7 @@ public abstract class  AbstractTest {
             options.addArguments("--disable-dev-shm-usage");
 
             FirefoxDriver driver = new FirefoxDriver(options);
-    
-    // Instantiate a new Page and navigate 
-=======
-    options.addArguments("--headless");
-    options.addArguments("--window-size=1580,1280");
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-dev-shm-usage");
-
-    FirefoxDriver driver = new FirefoxDriver(options);
+  
 
     // Instantiate a new Page and navigate
 >>>>>>> Stashed changes:java-maven-testng-starter/src/com/knoldus/tests/AbstractTest.java
